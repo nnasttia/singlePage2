@@ -24,28 +24,24 @@
       "type": "image/png"
     }
   ],
-  "description": "",
+  "description": "An website card.",
   "lang": "en",
   "categories": [
     "Developer",
-    "Freelancer",
-    ""
+    "Freelancer"
   ],
   "screenshots": [
     {
-      "src": "favicon/screenshot1.png",
+      "src": "favicon/test.png",
       "type": "image/png",
       "sizes": "414x736"
     },
     {
-      "src": "favicon/screenshot2.png",
-      "type": "image/jpeg",
-      "sizes": "375x791"
-    },
-    {
-      "src": "favicon/screenshot3.png",
-      "type": "image/jpeg",
-      "sizes": "414x736"
+      "src": "favicon/testGif.gif",
+      "sizes": "640x320",
+      "type": "image/gif",
+      "form_factor": "wide",
+      "label": "Application"
     }
   ]
 }

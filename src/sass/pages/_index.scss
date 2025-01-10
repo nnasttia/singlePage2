@@ -22,7 +22,7 @@
   position: fixed;
   z-index: 100;
   top: 50%;
-  right: rem(-8);
+  right: rem(-28);
   opacity: 1;
 
   @media all and (min-width: $tabletPortrait) {
@@ -30,18 +30,32 @@
   }
 
   li {
-    margin: rem(10) rem(7);
+    //margin: rem(10) rem(7);
     letter-spacing: .3px;
     display: block;
-    width: rem(14);
-    height: rem(13);
+    //width: rem(14);
+    //height: rem(13);
   }
 
   a {
-    width: rem(8);
-    height: rem(8);
-    border: 1px solid var(--primary);
-    border-radius: 50%;
+    width: rem(30);
+    height: rem(30);
+
+    @media all and (max-width: $tabletPortrait) {
+      width: rem(40);
+      height: rem(40);
+    }
+
+    &:before {
+      content: '';
+      width: rem(8);
+      height: rem(8);
+      border: 1px solid var(--primary);
+      border-radius: 50%;
+      display: block;
+
+    }
+
     display: block;
     position: relative;
 
@@ -51,7 +65,7 @@
       }
     }
 
-    &.active {
+    &.active::before {
       background-color: var(--primary);
     }
   }
@@ -372,8 +386,11 @@ main {
 #services {
   //background-color: rgb(38, 52, 70);
 
-  &:has(.service:hover) .service:not(:hover) {
-    filter: blur(4px)
+
+  @media all and (min-width: $desktop) {
+    &:has(.service:hover) .service:not(:hover) {
+      filter: blur(4px)
+    }
   }
 
   .service {
@@ -387,16 +404,18 @@ main {
     margin-bottom: rem(30);
     @include transition;
 
-    &:hover {
-      position: relative;
-      transform: translateY(-5px);
-      box-shadow: 0 rem(8) rem(14) rgba(0, 0, 0, .1);
-      border-bottom: rem(2) solid var(--primary);
+    @media all and (min-width: $desktop) {
+      &:hover {
+        position: relative;
+        transform: translateY(-5px);
+        box-shadow: 0 rem(8) rem(14) rgba(0, 0, 0, .1);
+        border-bottom: rem(2) solid var(--primary);
 
-      .service-icon {
-        background: var(--primary);
-        svg {
-          fill: var(--white);
+        .service-icon {
+          background: var(--primary);
+          svg {
+            fill: var(--white);
+          }
         }
       }
     }
@@ -591,20 +610,23 @@ main {
 }
 
 #contact {
-  //background: #263446;
 
   .contact-boxes {
     background: #2b3d4f;
     border: 3px solid #374757;
-    box-shadow: 0 4px 5px rgba(37, 50, 66, .7);
-    padding: rem(19) rem(20);
+    box-shadow: 0 4px 5px rgba(37, 50, 66, 0.7);
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
   }
 
   .contact-box {
-    padding: rem(25) 0;
+    padding: 25px 0;
     position: relative;
     border-bottom: 1px solid #263340;
     border-top: 1px solid #374757;
+    box-sizing: border-box; 
 
     &:first-child {
       border-top: none;
@@ -615,10 +637,10 @@ main {
     }
 
     .title-box {
-      font-size: rem(16);
+      font-size: 16px;
       font-weight: 600;
-      padding-bottom: rem(15);
-      letter-spacing: .5px;
+      padding-bottom: 15px;
+      letter-spacing: 0.5px;
       color: #16c0f0;
       text-align: center;
     }
@@ -626,36 +648,37 @@ main {
     .icon-box {
       position: absolute;
       top: 8px;
-      left: rem(11);
+      left: 11px;
       transform: rotate(-18deg);
-      opacity: .12;
+      opacity: 0.12;
       color: #5e7184;
     }
 
     .content-box {
-      font-size: rem(13);
+      font-size: 13px;
 
       p {
         margin-bottom: 0;
-        line-height: rem(20);
+        line-height: 20px;
         font-weight: 600;
         color: #c7c5c7;
         letter-spacing: 1px;
         text-align: center;
 
-        &p:last-child {
+        &:last-child {
           margin-top: 3px;
         }
       }
     }
   }
-
-  .contact-form {
-    position: relative;
-    background: #2b3d4f;
-    border: 3px solid #374757;
-    box-shadow: 0 4px 5px rgba(37, 50, 66, .7);
-    padding: rem(34) rem(30);
-
-  }
 }
+
+
+/*.contact-form {
+   position: relative;
+   background: #2b3d4f;
+   border: 3px solid #374757;
+   box-shadow: 0 4px 5px rgba(37, 50, 66, .7);
+   padding: rem(34) rem(30);
+
+ }*/
